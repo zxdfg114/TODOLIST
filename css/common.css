@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+/* ========================================================= */
+
+body {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  /* min-width: 1024px;
+  min-height: 768px; */
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+}
+
+h1 {
+  background-color: #222;
+  width: 100%;
+  margin-bottom: 20px;
+  color: aliceblue;
+  text-align: center;
+}
+
+input {
+  width: 80%;
+  height: 50px;
+  font-size: 2rem;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  padding-left: 20px;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.submit,
+.update {
+  width: 20%;
+  display: inline-block;
+  height: 100%;
+  height: 50px;
+  background-color: dodgerblue;
+  border: none;
+  color: white;
+  font-size: 30px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 0 10px 10px 0 ;
+}
+
+.submit:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+
+
+#todo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+#todo li {
+  display: block;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 40px;
+  margin-bottom: 10px;
+}
+
+#todo li span {
+  display: block;
+  height: 30px;
+  width: 20%;
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+}
+
+#todo li span i {
+  margin-left: 10px;
+}
+
+.fa-close {
+  color: red;
+  cursor: pointer;
+  width: 20px;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.fa-close:hover {
+  opacity: 1;
+}
+
+.fa-pencil {
+  color: dodgerblue;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.fa-pencil:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+#todo input {
+  display: block;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  border-radius: 0;
+}
