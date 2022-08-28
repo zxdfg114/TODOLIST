@@ -28,6 +28,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  padding: 0px 10%;
 }
 
 #root {
@@ -111,10 +112,11 @@ form {
 #todo li span {
   display: block;
   height: 30px;
-  width: 20%;
+  width: 40%;
   display: flex;
   font-weight: bold;
   align-items: center;
+  justify-content: flex-end;
 }
 
 #todo li span i {

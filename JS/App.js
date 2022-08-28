@@ -36,7 +36,7 @@ const today = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2 , 0)
 const todoList = document.querySelector('#todo');
 const TODO = 'todo';
 
-let data = new Array;
+let data = new Array; //입력받은 값을 저장할 배열 생성
 
 function makeList(item){
   const list = document.createElement('li');
@@ -78,35 +78,51 @@ function deleting(){
 
   for(let i =0; i < deleteBtn.length; i++) {
     deleteBtn[i].addEventListener('click', function(){
-      (deleteBtn[i].parentNode).parentNode.remove();
+      (this.parentNode).parentNode.remove();
       data.splice(i, 1);
       localStorage.setItem(TODO, JSON.stringify(data));
+      document.querySelector('.updateForm').remove();
     })
   }
 }
 
 // =====================================================================================
 function updating(){
-  const updateBtn = document.querySelectorAll('.fa-pencil');
+  const updateBtn = document.querySelectorAll('span .fa-pencil');
+  const form = document.createElement('form');
+  const input = document.createElement('input');
+  const button = document.createElement('button');
+  const updateForm = document.querySelectorAll('.updateForm')
+  const span = document.querySelectorAll('span')
+
   
-  for(let i =0 ; i < updateBtn.length; i++) {
+  
+  for(let i=0; i < updateBtn.length; i++) {
     updateBtn[i].addEventListener('click', function(){
-      let list = (updateBtn[i].parentElement).parentElement
-      const form = document.createElement('form');
-      const input = document.createElement('input');
-      const button = document.createElement('button');
-      const span = document.createElement('span');
+      const list = span[i].parentNode;
+      
+      form.classList.add('updateForm')
       input.value = `${data[i]}`;
       button.innerText = `UPDATE`;
       button.classList.add('update');
       form.appendChild(input)
       form.appendChild(button)
-      list.parentElement.insertBefore(form, list.nextSibling)
+      
+      console.log(i ,updateBtn.length)
+      if(i === updateBtn.length -1){
+        todoList.insertBefore(form, list.nextSibling);
+      }
+
+      
+      
+      
       
       const update = document.querySelector('.update');
+      
       update.addEventListener('click', function(e){
         e.preventDefault();
         console.log(input.value);
+        const span = document.createElement('span');
         list.innerText = input.value;
         list.appendChild(span)
         span.innerHTML = `${today} <i class="fa fa-pencil fa-2x"> </i> <i class="fa fa-close fa-2x"></i>`;
@@ -116,8 +132,9 @@ function updating(){
         form.remove();
       })
     })
+  } 
 }
-}
+  
 
 
-
+   
