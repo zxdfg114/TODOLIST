@@ -116,26 +116,23 @@ function updating(){
       form.appendChild(button)
       
       if(i === updateBtn.length -1){
-        todoList.insertBefore(form, list.nextSibling);
-      }
+        list.innerText = '';
+        list.appendChild(form);
       
-      
-      const update = document.querySelectorAll('.update');
-      
-      for(let i =0; i < updateBtn.length ; i++) {
-        update[i].addEventListener('click', function(e){
-          e.preventDefault();
-          let updatedTodo = input.value;
-          console.log(updatedTodo);
-          if(i === updateBtn.length -1){
+      const update = document.querySelector('.update');
+
+          update.addEventListener('click', function(e){
+            // e.preventDefault();
+            let updatedTodo = input.value;
             data.splice(i, 1, updatedTodo);
-            localStorage.setItem(TODO, JSON.stringify(data));
-            createSpan.innerHTML = `${today} <i class="fa fa-pencil fa-2x"> </i> <i class="fa fa-close fa-2x"></i>`
-            list.innerText = `${updatedTodo}`;
+            console.log(data);
+            localStorage.setItem(TODO, JSON.stringify(data))
+            createSpan.innerHTML = `${today} <i class="fa fa-pencil fa-2x"> </i> <i class="fa fa-close fa-2x"></i>`;
+            list.innerText = updatedTodo;
             list.appendChild(createSpan);
-            document.querySelector('.updateForm').remove();
-          }
-        })  
+            updating();
+            deleting();
+          })
       }      
     })
   } 
