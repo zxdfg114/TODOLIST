@@ -72,6 +72,10 @@ if(localStorage.key(TODO) != null) {
 } 
 
 //===================================================================================
+function deletingFilter (item){
+  return item != null ;
+}
+
 function deleting(){
   const deleteBtn = document.querySelectorAll('.fa-close');
 
@@ -79,12 +83,16 @@ function deleting(){
   for(let i =0; i < deleteBtn.length; i++) {
     deleteBtn[i].addEventListener('click', function(){
       (this.parentNode).parentNode.remove();
-      data.splice(i, 1);
-      localStorage.setItem(TODO, JSON.stringify(data));
-      document.querySelector('.updateForm').remove();
+      if(i === deleteBtn.length-1) {
+       data.splice(i, 1);
+       localStorage.setItem(TODO, JSON.stringify(data));
+      }
+      if(document.body.contains(document.querySelector('.updateForm'))) {
+        document.querySelector('.updateForm').remove();
+      }
     })
   }
-}
+}                                
 
 // =====================================================================================
 function updating(){
@@ -92,9 +100,8 @@ function updating(){
   const form = document.createElement('form');
   const input = document.createElement('input');
   const button = document.createElement('button');
-  const updateForm = document.querySelectorAll('.updateForm')
-  const span = document.querySelectorAll('span')
-
+  const createSpan = document.createElement('span');
+  const span = document.querySelectorAll('span');
   
   
   for(let i=0; i < updateBtn.length; i++) {
@@ -108,33 +115,28 @@ function updating(){
       form.appendChild(input)
       form.appendChild(button)
       
-      console.log(i ,updateBtn.length)
       if(i === updateBtn.length -1){
         todoList.insertBefore(form, list.nextSibling);
       }
-
       
       
+      const update = document.querySelectorAll('.update');
       
-      
-      const update = document.querySelector('.update');
-      
-      update.addEventListener('click', function(e){
-        e.preventDefault();
-        console.log(input.value);
-        const span = document.createElement('span');
-        list.innerText = input.value;
-        list.appendChild(span)
-        span.innerHTML = `${today} <i class="fa fa-pencil fa-2x"> </i> <i class="fa fa-close fa-2x"></i>`;
-        data.splice(i, 1, input.value);
-        console.log(data)
-        localStorage.setItem(TODO, JSON.stringify(data));
-        form.remove();
-      })
+      for(let i =0; i < updateBtn.length ; i++) {
+        update[i].addEventListener('click', function(e){
+          e.preventDefault();
+          let updatedTodo = input.value;
+          console.log(updatedTodo);
+          if(i === updateBtn.length -1){
+            data.splice(i, 1, updatedTodo);
+            localStorage.setItem(TODO, JSON.stringify(data));
+            createSpan.innerHTML = `${today} <i class="fa fa-pencil fa-2x"> </i> <i class="fa fa-close fa-2x"></i>`
+            list.innerText = `${updatedTodo}`;
+            list.appendChild(createSpan);
+            document.querySelector('.updateForm').remove();
+          }
+        })  
+      }      
     })
   } 
 }
-  
-
-
-   
