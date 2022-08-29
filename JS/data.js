@@ -1,8 +1,5 @@
 import { updating, deleting } from './list.js';
   
-const todo = document.querySelector('form');
-const submitBtn = document.querySelector('.submit');
-
 const date = new Date();
 const todoList = document.querySelector('#todo');
 

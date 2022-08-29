@@ -23,8 +23,7 @@ body {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  /* min-width: 1024px;
-  min-height: 768px; */
+  background-color: bisque;
 }
 
 .wrap {
@@ -44,23 +43,21 @@ body {
 h1 {
   display: block;
   padding: 10px 0;
-  background-color: dodgerblue;
+  /* background-color: dodgerblue; */
   width: 100%;
   margin-bottom: 20px;
-  color: aliceblue;
+  color: white;
+  text-shadow: 1px 1px 20px tomato;
   text-align: center;
 }
 
 input {
-  width: 80%;
+  width: 78%;
   height: 50px;
-  font-size: 1.5rem;
-  border : 1px solid black;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-radius: 10px 0 0 0;
+  font-size: 1rem;
+  border : none;
   padding-left: 20px;
+  margin-right: 20px;
 }
 
 input:focus-visible {
@@ -76,23 +73,25 @@ form {
 .submit,
 .update {
   width: 20%;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   height: 50px;
-  background-color: dodgerblue;
+  background-color: tomato;
   border: none;
   color: white;
-  font-size: 30px;
+  font-size: 3.5rem;
   text-transform: uppercase;
   opacity: 0.5;
   cursor: pointer;
   transition: all 0.3s;
-  /* border-radius: 0 10px 10px 0 ; */
+  border-radius: 50%;
 }
 
 .submit:hover {
   opacity: 1;
-  /* transform: scale(1.1); */
+  border-radius: 10px;
 }
 
 
@@ -105,16 +104,18 @@ form {
   justify-content: flex-start;
   flex-wrap: wrap;
   align-content: flex-start;
+  background-color: rgba(245, 245, 220, 0.4);
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #todo li {
   display: block;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #bbb;
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 20px 40px;
-  padding-bottom: 5px;
   margin-bottom: 10px;
 }
 
@@ -145,7 +146,7 @@ form {
 }
 
 .fa-pencil {
-  color: dodgerblue;
+  color: tomato;
   opacity: 0.5;
   transition: all 0.3s;
 }
@@ -157,7 +158,6 @@ form {
 
 #todo input {
   display: inline-block;
-  /* margin-bottom: 20px; */
   border-radius: 0;
 }
 

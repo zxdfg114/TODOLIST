@@ -8,10 +8,10 @@ export function createForm(){
   input.setAttribute('required',"required");
   
   input.classList.add('todo')
-  input.placeholder = `Write What to do`;
+  input.placeholder = `할 일을 작성해주세요`;
   button.type = 'submit';
   button.classList.add('submit')
-  button.innerText = 'submit';
+  button.innerText = '+';
   form.appendChild(input);
   form.appendChild(button);
   root.appendChild(form);

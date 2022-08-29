@@ -69,10 +69,9 @@ export function deleting(){
     deleteBtn[i].addEventListener('click', function(){
       (this.parentNode).parentNode.remove();
       if(i === deleteBtn.length-1) {
-       console.log(parsedData)
-       console.log(data);
        data.splice(i, 1);
        localStorage.setItem(TODO, JSON.stringify(data));
+       console.log(parsedData)
       }
       if(document.body.contains(document.querySelector('.updateForm'))) {
         document.querySelector('.updateForm').remove();
