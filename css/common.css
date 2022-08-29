@@ -108,9 +108,11 @@ form {
   justify-content: flex-start;
   flex-wrap: wrap;
   align-content: flex-start;
-  background-color: rgba(245, 245, 220, 0.4);
+  background-color: rgba(245, 245, 220, 0.3);
   padding-top: 20px;
   padding-bottom: 20px;
+  border-radius: 20px;
+  border: 2px solid white;
 }
 
 #todo li {
