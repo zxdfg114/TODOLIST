@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +11,10 @@ body * {
 
 li {
   list-style: none;
+}
+
+html {
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* ========================================================= */
@@ -36,7 +42,9 @@ body {
 }
 
 h1 {
-  background-color: #222;
+  display: block;
+  padding: 10px 0;
+  background-color: dodgerblue;
   width: 100%;
   margin-bottom: 20px;
   color: aliceblue;
@@ -46,7 +54,7 @@ h1 {
 input {
   width: 80%;
   height: 50px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border : 1px solid black;
   border-top: none;
   border-left: none;
@@ -79,7 +87,7 @@ form {
   opacity: 0.5;
   cursor: pointer;
   transition: all 0.3s;
-  border-radius: 0 10px 10px 0 ;
+  /* border-radius: 0 10px 10px 0 ; */
 }
 
 .submit:hover {
@@ -101,7 +109,7 @@ form {
 
 #todo li {
   display: block;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -125,7 +133,7 @@ form {
 }
 
 .fa-close {
-  color: red;
+  color: black;
   cursor: pointer;
   width: 20px;
   opacity: 0.5;
@@ -148,8 +156,11 @@ form {
 }
 
 #todo input {
-  display: block;
-  border: 1px solid black;
+  display: inline-block;
   /* margin-bottom: 20px; */
   border-radius: 0;
+}
+
+#todo li form {
+  margin-bottom: -6px;
 }

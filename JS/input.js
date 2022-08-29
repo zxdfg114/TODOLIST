@@ -5,8 +5,11 @@ export function createForm(){
   const submitBtn = document.querySelector('.submit');
   
   input.type = 'text';
+  input.setAttribute('required',"required");
+  
   input.classList.add('todo')
   input.placeholder = `Write What to do`;
+  button.type = 'submit';
   button.classList.add('submit')
   button.innerText = 'submit';
   form.appendChild(input);

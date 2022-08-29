@@ -21,20 +21,27 @@ export function updating(){
       input.value = `${data[i]}`;
       button.innerText = `UPDATE`;
       button.classList.add('update');
+      button.type = 'submit'
       form.appendChild(input)
       form.appendChild(button)
-      updateBtn[i].addEventListener('click', updating)
       
       if(i === updateBtn.length -1){
         list.innerText = '';
         list.appendChild(form);
       
       const update = document.querySelector('.update');
-
-        update.addEventListener('click', function(e){
+        input.type = 'text';
+        input.setAttribute('required',"required");
+        update.type = 'submit';    
+        
+        form.addEventListener('submit', function(e){
           e.preventDefault();
+          
           let updatedTodo = input.value;
+          console.log(input.value)
+          
           data.splice(i, 1, updatedTodo);
+          
           createSpan.innerHTML = `${today} <i class="fa fa-pencil fa-2x"></i> <i class="fa fa-close fa-2x"></i>`;
           
           console.log(document.querySelectorAll('.fa pencil'));
