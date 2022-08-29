@@ -21,10 +21,10 @@ const TODO = 'todo';
 
  let data = new Array; //입력받은 값을 저장할 배열 생성
 
-function savingData (e) {
+async function savingData (e) {
   
   e.preventDefault();
-  data.push(input.value);
+  await data.push(input.value);
   console.log(data);
   localStorage.setItem(TODO, JSON.stringify(data));
   makeList(input.value);

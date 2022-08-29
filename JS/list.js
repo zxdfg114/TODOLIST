@@ -71,7 +71,8 @@ export function deleting(){
       if(i === deleteBtn.length-1) {
        data.splice(i, 1);
        localStorage.setItem(TODO, JSON.stringify(data));
-       console.log(parsedData)
+       console.log(data)
+       location.reload();
       }
       if(document.body.contains(document.querySelector('.updateForm'))) {
         document.querySelector('.updateForm').remove();
