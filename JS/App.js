@@ -14,9 +14,9 @@ createForm();
 
 const form = document.querySelector('form');
 const input = document.querySelector('input');
-const date = new Date();
-const today = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2 , 0)}-${String(date.getDate()).padStart(2, 0)}`;
-const todoList = document.querySelector('#todo');
+// const date = new Date();
+// const today = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2 , 0)}-${String(date.getDate()).padStart(2, 0)}`;
+// const todoList = document.querySelector('#todo');
 const TODO = 'todo';
 
  let data = new Array; //입력받은 값을 저장할 배열 생성
